@@ -1133,7 +1133,7 @@ $(document).ready(function() {
 				return { db: db, wasmBytes: wasmBytes, fromIndexedDB: true };
 			});
 		}).catch(function() {
-			return download(Module.locateFile('UE4Game-HTML5-Shipping.wasm'), 'arraybuffer').then(function(wasmBytes) {
+			return download(Module.locateFile('https://dl.dropboxusercontent.com/scl/fi/mx5zfs5jq7mvfb7fbwbl6/UE4Game-HTML5-Shipping.wasm?rlkey=502ltkj755871rklf5h88axc4&st=9dwrqvzu&dl=0'), 'arraybuffer').then(function(wasmBytes) {
 				return { db: db, wasmBytes: wasmBytes, fromIndexedDB: false };
 			});
 		});
@@ -1167,9 +1167,9 @@ $(document).ready(function() {
 			});
 */
 // Instead as a fallback, download as ArrayBuffer. (TODO: Figure out the bugs with the above, and switch to using that one instead)
-			fetchOrDownloadAndStore(db, Module.locateFile('itpurplehack-HTML5-Shipping.data'), 'arraybuffer').then(function(dataArrayBuffer) {
+			fetchOrDownloadAndStore(db, Module.locateFile('https://dl.dropboxusercontent.com/scl/fi/00f3qp8j8qtbv0vl387em/itpurplehack-HTML5-Shipping.data?rlkey=w5xgaue1ni52zf9dushni0gx7&st=fcvf429x&dl=0'), 'arraybuffer').then(function(dataArrayBuffer) {
 				Module['preloadedPackages'] = {};
-				Module['preloadedPackages'][Module.locateFile('itpurplehack-HTML5-Shipping.data')] = dataArrayBuffer;
+				Module['preloadedPackages'][Module.locateFile('https://dl.dropboxusercontent.com/scl/fi/00f3qp8j8qtbv0vl387em/itpurplehack-HTML5-Shipping.data?rlkey=w5xgaue1ni52zf9dushni0gx7&st=fcvf429x&dl=0')] = dataArrayBuffer;
 				return dataJsDownload.then(addScriptToDom);
 			});
 
